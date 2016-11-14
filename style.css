@@ -1,11 +1,65 @@
-<!DOCTYPE HTML>
-<html>
-<style>
-        hr {
-        color: green;
-        }
-      h1 {
-        color: orange;
-      }
-</style>
-</html>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    background-color: #333;
+
+
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 27px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+}
+.active {
+ background-color: #4CAF50;
+}
+body {
+font-family: Ariel;
+background-image:url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj27df7wqjQAhUQ7mMKHebwCsYQjRwIBw&url=http%3A%2F%2Fwww.shutterstock.com%2Fvideo%2Fclip-3668363-stock-footage-animated-disco-ball.html&bvm=bv.138493631,d.cGc&psig=AFQjCNGTjxtIGR6NuejRqYtHAhCvrWAcUw&ust=1479222351477373");
+
+}
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+
+    }
+h2 {
+	font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+	}
+p {
+	font-size: 40px; 
+	font-weight: bold;
+	background-color:black;
+	color:white;
+	}
+h3 {
+	font-size:25px;
+	}
+ol {
+font-size: 25px;
+font-weight: bold;
+color: white;
+background-color: black;
+}
+
+canvas {
+
+    border: 1px solid black;
+}
