@@ -1,70 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-body {
-  margin: 0;
-  min-width: 250px;
-}
-* {
-  box-sizing: border-box;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
+    <title>To Do List</title>
 </head>
-<body>
-    <script>
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+<style>
+    #s1{
+      color: magenta;  
     }
-  }
-}
+</style>
+<body>
+    
+    <ul id="s1">I'll probably</ul>
+    
+    <script>
+        function makeList(){
+            var userInput = document.getElementById("inputText");
+            
+            var lists = document.getElementById("s1");
+            for(var i = 0; i < 100; i++){
+            var item = document.createElement("li");
+            
+            item.textContent = "I'll probably"+userInput.value;
+            
+            lists.appendChild(item);
+            }
+        }
 </script>
-
-</body>
+        <textarea rows="10"cols="80"id="inputText">Put your stuffs here</textarea>
+        <button onclick="makeList();">Do The Thing</button>
+    </body>
 </html>
-
