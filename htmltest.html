@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Test things and stuff
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <td>
+                    Return to Home: <a href="index.html">Home</a>
+                </td>
+            </tr>
+        </table>
+        <textarea rows="10" cols="80" id="inputText">
+            Input html to test here
+        </textarea>
+        <button onclick="testHTML();">
+            OH YEAH!!!
+        </button>
+        <br>
+        <span id="spanTag">
+        </span>
+        <script>
+            function testHTML(uerInput){
+              var userInput = document.getElementById("inputText");
+              var theSpan = document.getElementById("spanTag");
+              theSpan.innerHTML = userInput.value;
+            }
+        </script>
+    </body>
+</html>
