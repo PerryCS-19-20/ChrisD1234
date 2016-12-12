@@ -1,1 +1,79 @@
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            table {
+                border-collapse: collapse; 
+            }
+            table, td, th {
+                border: 1px solid black;
+                font-size: 80px;
+            }
+            td {
+                height: 100px;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+              <td id="1" onclick= "play('1');"></td>
+              <td id="2" onclick= "play('2');"></td> 
+              <td id="3" onclick= "play('3');"></td>
+            </tr>
+            <tr>
+              <td id="4" onclick="play('4');"></td>
+              <td id="5" onclick="play('5');"></td> 
+              <td id="6" onclick="play('6');"></td>
+            </tr>
+            <tr>
+              <td id="7" onclick="play('7');"></td>
+              <td id="8" onclick="play('8');"></td> 
+              <td id="9" onclick="play('9');"></td>
+            </tr>
+        </table>
+        <span id="span1"></span>
+        <script>
+            var turn = 0;
+            function play(num) {
+             var cell = document.getElementById(num);
+             if(cell.textContent=="") {
+                if(turn % 2 == 0){
+                    cell.textContent="o";
+                }else{
+                    cell.textContent="x";
+                }
+             }
+            turn++;
+            checkWin();
+            }
+           function checkWin() {
+               check3cells("1","2","3");
+               check3cells("4","5","6");
+               check3cells("7","8","9");
+               check3cells("1","4","7");
+               check3cells("2","5","8");
+               check3cells("3","6","9");
+               check3cells("1","5","9");
+               check3cells("3","5","7");
+           }
+           function check3cells(cid1, cid2, cid3) {
+               var c1 = document.getElementById(cid1);
+               var c2 = document.getElementById(cid2);
+               var c3 = document.getElementById(cid3);
+               var span1 = document.getElementById("span1");
+               if ((c1.textContent == c2.textContent) && (c1.textContent == c3.textContent) && (c1.textContent !="")) { 
+                   span1.textContent="win";
+                   c1.style.background = "red";
+                   c2.style.background = "red";
+                   c3.style.background = "red";
+               }
+           }
+       
+       </script>
+    </body>
+</html>
